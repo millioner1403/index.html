@@ -1,3 +1,6 @@
+Dll_or_EXE := "hw.dll"
+CONNECTING_TO_GAME()
+
 CONNECTING_TO_GAME()
 {
 	global
