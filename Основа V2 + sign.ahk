@@ -94,14 +94,14 @@ FAST_SEARCH_SIGNATURE_IN_PROCESS(PATTERN := "", EXTRA := 0)
 	{
 		if (DllCall("VirtualQueryEx", "Ptr", ProcessHandle, "Ptr", old_RegionSize += RegionSize, "Ptr", _MEMORY_BASIC_INFORMATION, "Ptr", _MEMORY_BASIC_INFORMATION.Size))
 		{
-			;BaseAddress := Format("0x{:02X}", NumGet(_MEMORY_BASIC_INFORMATION, 0, "Int64"))
+			BaseAddress := Format("0x{:02X}", NumGet(_MEMORY_BASIC_INFORMATION, 0, "Int64"))
 			AllocationBase := Format("0x{:02X}", NumGet(_MEMORY_BASIC_INFORMATION, 8, "Int64"))
 			RegionSize := Format("0x{:02X}", NumGet(_MEMORY_BASIC_INFORMATION, 24, "Int64"))
 			State := Format("0x{:02X}", NumGet(_MEMORY_BASIC_INFORMATION, 32, "UInt"))
 
 			if (State == MEM_COMMIT)
 			{
-				result := FAST_SEARCH_SIGNATURE_IN_MODULE(PATTERN, EXTRA, AllocationBase, RegionSize)
+				result := FAST_SEARCH_SIGNATURE_IN_MODULE(PATTERN, EXTRA, BaseAddress, RegionSize)
 				if (result != -100 and result != "")
 				{
 					return result
