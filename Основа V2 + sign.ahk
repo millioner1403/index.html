@@ -126,7 +126,7 @@ LOAD_FAST_CODE()
 
 READ_MEMORY(ADDRESS, TYPE := "UInt")
 {
-	if (DllCall("Kernel32\ReadProcessMemory", "UInt", ProcessHandle, "UInt", ADDRESS, TYPE "*", &uint32 := 0, "Ptr", 16, "UInt", 0))
+	if (DllCall("Kernel32\ReadProcessMemory", "UInt", ProcessHandle, "UInt", ADDRESS, TYPE "*", &uint32 := 0, "Ptr", 4, "UInt", 0))
 	{
 		return uint32
 	}
