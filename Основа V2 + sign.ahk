@@ -9,7 +9,7 @@ CONNECTING_TO_GAME("hl2.exe", "server.dll")			; Первый параметр э
 ; 		|																							|
 ; 		|	  FAST_SEARCH_SIGNATURE_IN_PROCESS - это поиск сигнатуры по всему процессу игры			|
 ; 		|	  Пример:																				|
-; 		|	  address := FAST_SEARCH_SIGNATURE_IN_PROCESS("02 48 85 76 A8", 0)						|
+; 		|	  address := FAST_SEARCH_SIGNATURE_IN_PROCESS("02 48 ?? 76 A8", 0)						|
 ; 		|																							|
 ; 		|	  Функция возвращает адрес																|
 ; 		|	  Первый параметр 		- наш паттерн													|
@@ -20,7 +20,7 @@ CONNECTING_TO_GAME("hl2.exe", "server.dll")			; Первый параметр э
 ; 		|																							|
 ; 		|	  FAST_SEARCH_SIGNATURE_IN_MODULE - это поиск сигнатуры внутри указанного модуля игры	|
 ; 		|	  Пример:																				|
-; 		|	  address := FAST_SEARCH_SIGNATURE_IN_MODULE("02 48 85 76 A8", 0, 0x620000, 0x10000)	|
+; 		|	  address := FAST_SEARCH_SIGNATURE_IN_MODULE("02 48 ?? 76 A8", 0, 0x620000, 0x10000)	|
 ; 		|																							|
 ; 		|	  Функция возвращает адрес																|
 ; 		|	  Первый параметр 		- наш паттерн													|
