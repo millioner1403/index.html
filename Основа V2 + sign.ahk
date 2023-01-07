@@ -40,7 +40,7 @@ CONNECTING_TO_GAME(NAME_GAME, DLL_GAME)
         ExitApp()
     }
     Client          := GET_DLL_BASE(DLL_GAME, PID)
-    ProcessHandle   := DllCall("OpenProcess", "int", 0x0400 | 0x0010 | 0x0020, "char", 0, "UInt", PID, "UInt")
+    ProcessHandle   := DllCall("OpenProcess", "int", 2035711, "char", 0, "UInt", PID, "UInt")
     return 1
 }
 
